@@ -1,0 +1,44 @@
+$color-heartbeat : red;
+$timeout-heartbeat-animation: 10s;
+$font-size: 30pt;
+$length-heartbeat: 1em;
+
+@keyframes pulsate {
+    0% {
+        transform: scale( .75);
+        opacity:0.6;
+    }
+    5% {
+        transform: scale( 1);
+    }
+    10% {
+        transform: scale( .75);
+    }
+    15% {
+        transform: scale( 1);
+        opacity:1;
+
+    }
+    25% {
+        transform: scale( .75);
+    }
+    60% {
+        transform: scale( .75);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale( .75);
+        opacity: 0;
+    }
+}
+#heart {
+    font-size: $font-size;
+    width: $length-heartbeat;
+    height: $length-heartbeat;
+    color: $color-heartbeat;
+    transform: scale( .75);
+    opacity: 0;
+}
+.pulsate{
+    animation: pulsate $timeout-heartbeat-animation 1;
+}
